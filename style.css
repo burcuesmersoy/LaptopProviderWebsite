@@ -1,3 +1,23 @@
-* {
-    background-color: gray;
+body{
+    color:gray ;
+    background-color: gray !important;
+}
+.deneme{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    padding: 2%;
+    margin: 130px 0 0;
+    background-color: rgba(15,15,15,.8); 
+    
+}
+.deneme h2{
+    color: aliceblue;
+    font-size: 1rem;
+    border-bottom: 1px solid #dd3b33;
+
+}
+.fontsettings{
+    color: aliceblue;
 }
