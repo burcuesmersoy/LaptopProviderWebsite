@@ -11,7 +11,15 @@
   <script>
     $(document).ready(function() {
       $("#button1").click(function() {
-        $("#div1").load("add.html");
+          var data = $("#form1").serialize();
+
+          if (data === 'operation=add') {
+              $("#div1").load("add.html");
+          } else if (data === 'operation=update') {
+              $("#div1").load("update.html");
+          } else if (data === 'operation=delete') {
+              $("#div1").load("delete.html");
+          }
       });
     });
   </script>
@@ -303,7 +311,7 @@
           <tbody>
 
             <?php
-            $getOrders = "SELECT * FROM `storage` ORDER BY `storageID` ASC";
+            $getOrders = "SELECT * FROM `storage` ORDER BY `storageID`";
             $result = mysqli_query($conn, $getOrders);
             while ($row = mysqli_fetch_assoc($result)) {
               $storageID = $row['storageID'];
@@ -388,7 +396,7 @@
   <div class="container">
     <div class="row">
       <form id="form1" method="post">
-        <select class="form-select mb-4" aria-label="select" name="operation">
+        <select class="form-select mb-4" aria-label="select" name="operation" id="operation">
           <option selected>Select the operation</option>
           <option value="add" name="add">ADD</option>
           <option value="update" name="update">UPDATE</option>
@@ -399,9 +407,9 @@
 
     </div>
     <div id="div1">
-          
+
     </div>
-    
+
   </div>
 
 
