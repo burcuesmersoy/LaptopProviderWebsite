@@ -59,27 +59,56 @@ require_once('dbconn.php');
             </div>
         </div>
     </nav>
-    
+    <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
     <?php
-    $sql = "SELECT * FROM laptop";
+    $sql = "select cpu.component_name as cpuName,
+            gpu.component_name as gpuName,
+            display.component_name as displayName,
+            os.component_name as osName,
+            ram.component_name as ramName,
+            storage.component_name as storageName,
+            laptop.laptop_img1 as laptopImg,
+            laptop.name as laptopName
+                from laptop 
+                        inner join cpu on cpu.cpuID= laptop.cpuID
+                        inner join gpu on gpu.gpuID=laptop.gpuID
+                        inner join display on display.displayID=laptop.displayID
+                        inner join os on os.osID=laptop.osID
+                        inner join ram on ram.ramID=laptop.ramID
+                        inner join storage on storage.storageID=laptop.storageID;";
     $result = mysqli_query($conn, $sql);
 
       foreach( $result as $laptop ) {
     ?>
-  <div class="col">
+  <div class="col" style="margin-top:50px;">
     <div class="card h-100">
-      <img src="<?=$laptop["laptop_img1"]?>" class="card-img-top" alt="...">
+      <img src="assets/laptop_images/<?=$laptop["laptopImg"]?>" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title"><?=$laptop["name"]?></h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h5 class="card-title"><?=$laptop["laptopName"]?></h5>
+        <p class="card-text"></p>
+        <ul>
+            <li><?=$laptop["cpuName"]?></li>
+            <li><?=$laptop["gpuName"]?></li>
+            <li><?=$laptop["displayName"]?></li>
+            <li><?=$laptop["osName"]?></li>
+            <li><?=$laptop["ramName"]?></li>
+            <li><?=$laptop["storageName"]?></li>
+            <h5>
+                 <a class="button-30"  href="index.php?id=<?=$laptop["laptopID"];?>">Go Buy!</a>
+            </h5>
+        </ul>
       </div>
     </div>
   </div>
   <?php } ?>
+</div>
 </div>
 
 
 </body>
 
 </html>
+
+
+
