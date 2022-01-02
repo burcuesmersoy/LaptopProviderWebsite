@@ -48,6 +48,11 @@
         <h2>Add New Laptop</h2>
         <form action="addLaptop.php" method="post">
             <div class="row justify-content-center">
+                <div class="input-group">
+                    <input type="file" class="form-control" id="inputGroupFile04"
+                        aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                    <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
+                </div>
                 <div class="form-floating col-4 mb-3">
                     <input type="text" class="form-control" id="did" placeholder="name" name="name">
                     <label for="did">Name</label>
@@ -55,14 +60,15 @@
 
             </div>
             <div class="row justify-content-center">
-                <div class="form-floating mb-3 col-4">
-                    <input type="number" class="form-control" id="gid" placeholder="gpuID" name=gpuID">
-                    <label for="gid">gpuID</label>
-                </div>
+
 
                 <div class="form-floating col-4">
                     <input type="number" class="form-control" id="cid" placeholder="cpuID" name="cpuID">
                     <label for="cid">cpuID</label>
+                </div>
+                <div class="form-floating mb-3 col-4">
+                    <input type="number" class="form-control" id="gid" placeholder="gpuID" name="gpuID">
+                    <label for="gid">gpuID</label>
                 </div>
                 <div class="form-floating col-4">
                     <input type="number" class="form-control" id="oid" placeholder="osID" name="osID">
