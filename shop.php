@@ -22,58 +22,7 @@ if ($conn->connect_error) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-    <script>
-        $(document).ready(function () {
-            var names = {};
-
-            function updateNames() {
-                names['storage'] = $('#storage option:selected').text();
-                names['ram'] = $('#ram option:selected').text();
-                names['gpu'] = $('#gpu option:selected').text();
-                names['cpu'] = $('#cpu option:selected').text();
-                names['display'] = $('#display option:selected').text();
-                names['os'] = $('#os option:selected').text();
-            }
-
-            function updatePrices() {
-                $.post("updatePrice.php", names, function (data) {
-                        $("[id=price]").show().html(data);
-                    }
-                );
-            }
-
-            updateNames();
-            updatePrices();
-
-            $("#storage").change(function () {
-                updateNames();
-                updatePrices();
-            });
-            $("#ram").change(function () {
-                updateNames();
-                updatePrices();
-            });
-            $("#gpu").change(function () {
-                updateNames();
-                updatePrices();
-            });
-            $("#cpu").change(function () {
-                updateNames();
-                updatePrices();
-            });
-            $("#display").change(function () {
-                updateNames();
-                updatePrices();
-            });
-            $("#os").change(function () {
-                updateNames();
-                updatePrices();
-            });
-        });
-    </script>
 </head>
 
 <body class="bg-dark">
@@ -88,31 +37,31 @@ if ($conn->connect_error) {
             <img src="https://cdn-icons-png.flaticon.com/512/1001/1001266.png" style="width: 40px;" alt="">Sigma Inc</a>
 
 
-			<br>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav ms-auto">
-					<a class="nav-link" aria-current="page" href="loggedindex.php">Home</a>
-					<a class="nav-link" href="shop.php">Shop</a>
-					<a class="nav-link" href="#AboutUs">About Us</a>
-					<a href="admin.php" class="btn">
-						<svg xmlns="http://www.w3.org/2000/svg" color="#646771" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
-							<path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
-							<path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z" />
-						</svg>
-					</a>
-                    <a href="endSession.php" class="btn">
-						<svg xmlns="http://www.w3.org/2000/svg" color="#646771" width="16" height="16" fill="currentColor" class="bi bi-door-closed" viewBox="0 0 16 16">
-                            <path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z"/>
-                            <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"/>
-                          </svg>
-					</a>
-				</div>
-			</div>
-		</div>
-	</nav>
+        <br>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" aria-current="page" href="loggedindex.php">Home</a>
+                <a class="nav-link" href="shop.php">Shop</a>
+                <a class="nav-link" href="#AboutUs">About Us</a>
+                <a href="admin.php" class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" color="#646771" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
+                        <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+                        <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z" />
+                    </svg>
+                </a>
+                <a href="endSession.php" class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" color="#646771" width="16" height="16" fill="currentColor" class="bi bi-door-closed" viewBox="0 0 16 16">
+                        <path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z"/>
+                        <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
 
 <!-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
 
@@ -219,67 +168,67 @@ if ($conn->connect_error) {
     </div>
 </div>
 </div>
-   <!---FOOTER--> 
-   <div class="card mx-5">
-        <div class="row mb-4 ">
-            <div class="col-md-4 col-sm-11 col-xs-11">
-                <div class="footer-text pull-left">
-                    <div class="d-flex">
-                        <h1 class="font-weight-bold mr-2 px-3" style="color:#16151a; background-color:#957bda"> Sigma </h1>
-                        <h1 style="color: #957bda">Inc</h1>
-                    </div>
-                    <p class="card-text">Σ Sigma Inc. is a laptop company. There are laptops that have different components to appeal to different audiences. Also, laptops are customizable by the customer with a price change.</p>
-                    <div class="social mt-2 mb-3"> <i class="fa fa-facebook-official fa-lg"></i> <i class="fa fa-instagram fa-lg"></i> <i class="fa fa-twitter fa-lg"></i> <i class="fa fa-linkedin-square fa-lg"></i> <i class="fa fa-facebook"></i> </div>
+<!---FOOTER-->
+<div class="card mx-5">
+    <div class="row mb-4 ">
+        <div class="col-md-4 col-sm-11 col-xs-11">
+            <div class="footer-text pull-left">
+                <div class="d-flex">
+                    <h1 class="font-weight-bold mr-2 px-3" style="color:#16151a; background-color:#957bda"> Sigma </h1>
+                    <h1 style="color: #957bda">Inc</h1>
                 </div>
-            </div>
-            <div class="col-md-2 col-sm-1 col-xs-1 mb-2"></div>
-            <div class="col-md-2 col-sm-4 col-xs-4">
-                <h5 class="heading">Services</h5>
-                <ul>
-                    <li>IT Consulting</li>
-                    <li>Development</li>
-                    <li>Cloud</li>
-                    <li>DevOps & Support</li>
-                </ul>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-4">
-                <h5 class="heading">Industries</h5>
-                <ul class="card-text">
-                    <li>Finance</li>
-                    <li>Public Sector</li>
-                    <li>Smart Office</li>
-                    <li>Retail</li>
-                </ul>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-4">
-                <h5 class="heading">Company</h5>
-                <ul class="card-text">
-                    <li>About Us</li>
-                    <li>Blog</li>
-                    <li>Contact</li>
-                    <li>Join Us</li>
-                </ul>
+                <p class="card-text">Σ Sigma Inc. is a laptop company. There are laptops that have different components to appeal to different audiences. Also, laptops are customizable by the customer with a price change.</p>
+                <div class="social mt-2 mb-3"> <i class="fa fa-facebook-official fa-lg"></i> <i class="fa fa-instagram fa-lg"></i> <i class="fa fa-twitter fa-lg"></i> <i class="fa fa-linkedin-square fa-lg"></i> <i class="fa fa-facebook"></i> </div>
             </div>
         </div>
-        <div class="divider mb-4"> </div>
-        <div class="row" style="font-size:10px;">
-            <div class="col-md-6 col-sm-6 col-xs-6">
-                <div class="pull-left">
-                    <p><i class="fa fa-copyright"></i> 2022 @copyright by sigma inc</p>
-                </div>
+        <div class="col-md-2 col-sm-1 col-xs-1 mb-2"></div>
+        <div class="col-md-2 col-sm-4 col-xs-4">
+            <h5 class="heading">Services</h5>
+            <ul>
+                <li>IT Consulting</li>
+                <li>Development</li>
+                <li>Cloud</li>
+                <li>DevOps & Support</li>
+            </ul>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-4">
+            <h5 class="heading">Industries</h5>
+            <ul class="card-text">
+                <li>Finance</li>
+                <li>Public Sector</li>
+                <li>Smart Office</li>
+                <li>Retail</li>
+            </ul>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-4">
+            <h5 class="heading">Company</h5>
+            <ul class="card-text">
+                <li>About Us</li>
+                <li>Blog</li>
+                <li>Contact</li>
+                <li>Join Us</li>
+            </ul>
+        </div>
+    </div>
+    <div class="divider mb-4"> </div>
+    <div class="row" style="font-size:10px;">
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="pull-left">
+                <p><i class="fa fa-copyright"></i> 2022 @copyright by sigma inc</p>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-6">
-                <div class="pull-right mr-4 d-flex policy">
-                    <div>Terms of Use</div>
-                    <div>Privacy Policy</div>
-                    <div>Cookie Policy</div>
-                </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="pull-right mr-4 d-flex policy">
+                <div>Terms of Use</div>
+                <div>Privacy Policy</div>
+                <div>Cookie Policy</div>
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
