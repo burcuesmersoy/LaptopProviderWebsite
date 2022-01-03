@@ -31,7 +31,10 @@ if ($conn->connect_error) {
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
 		<div class="container">
-			<a class="navbar-brand" href="index.php"> Sigma Inc </a>
+			<a class="navbar-brand" href="">
+				<img src="https://cdn-icons-png.flaticon.com/512/1001/1001266.png" style="width: 40px;" alt="">Sigma Inc</a>
+			
+
 			<br>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -40,9 +43,10 @@ if ($conn->connect_error) {
 				<div class="navbar-nav ms-auto">
 					<a class="nav-link" aria-current="page" href="index.php">Home</a>
 					<a class="nav-link" href="shop.php">Shop</a>
+					<a class="nav-link" href="#AboutUs">About Us</a>
 					<div class="dropdown">
 						<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+							<svg xmlns="http://www.w3.org/2000/svg" color="#646771" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
 								<path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
 							</svg>
 						</button>
@@ -52,7 +56,7 @@ if ($conn->connect_error) {
 						</ul>
 					</div>
 					<a href="admin.php" class="btn">
-						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
+						<svg xmlns="http://www.w3.org/2000/svg" color="#646771" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
 							<path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
 							<path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z" />
 						</svg>
@@ -148,7 +152,36 @@ if ($conn->connect_error) {
 			<span class="visually-hidden">Next</span>
 		</button>
 	</div>
+	<section class="text-left p-5" id="AboutUs">
+        <div class="container d-md-flex align-items-center">
+          <div>
+              <h3 style="color:#957bda;">About Us</h1>
+            <p class="my-3" style="color:#646771;">
+                Oynadığınız oyunlarla bütünleşmek istiyorsanız ve kullandığınız yazılımlarla yaratıcılığınızın doruklarına çıkmayı hedefliyorsanız, Monster Notebook size beklentilerinizin de ötesinde bir dünya sunuyor.
 
+                En yüksek performanslı notebook modellerini, en erişilebilir fiyatlarla kullanıcılarla buluşturan Monster, yılların verdiği sektör tecrübesiyle ürün gamını şekillendirerek tüm ihtiyaçlarınıza uygun notebook modelleri hazırlıyor
+                
+                İsimlerini Türk mitolojisinden alan notebook serilerini; Gaming, Business ve Workstation kategorileri altında bir araya getiren Monster, üst seviye donanım bileşenleriyle güçlendirilen taşınabilir bilgisayarları sayesinde masaüstü çalışma konforunu mobil platformda yaşamanızı sağlıyor.
+                
+                Avantajlı fiyatlara konumlanan Abra serisi, Full HD çözünürlükte oyun oynayabilmenizi mümkün kılıyor. .
+                
+                Oyunların yanı sıra diğer tüm uygulamalarda daha fazla performans elde etmenize, 2K ve üzerindeki çözünürlüklerde oyun oynamanıza ortam hazırlayan Tulpar serisi, sizin için ideal seçenek haline geliyor.
+                
+                Sahip olduğu donanım sayesinde Gaming ailesinin en güçlü notebook serisi Semruk ise sizi, herkesin şahit olamayacağı bir oyun atmosferine davet ediyor. .
+                
+                Güçlü ve işlevsel bir dizüstü bilgisayara gereksiniminiz varsa Huma serisi, 3D tasarım ve render gibi yüksek işlem gücü gerektiren uygulamalarla çalışıyorsanız Markut serisi içerisinde boy gösteren notebook modelleri, projelerinizi kısa sürede tamamlamanıza yardım ediyor.
+                
+                Monster, almayı planladığınız dizüstü bilgisayarı modelleri için satış öncesinde konfigürasyon özelleştirme seçenekleri sunarak bilgisayarınızı belirli ölçülerde kişiselleştirebilmenize olanak veriyor. Bu noktada ekleyeceğiniz donanıma bağlı olarak notebook fiyatları değişiklik gösteriyor.
+                
+                Ayrıca Monster, satış sonrasında da memnuniyetinizi daimi kılmayı garanti ediyor. Notebooklarınız için ömür boyu ücretsiz bakım hizmeti, satın aldıktan sonra ilk 15 gün içinde çalıştıramadığınız yazılım ve oynayamadığınız oyunla karşılaşırsanız anında iade olanağı, ilk 30 gün içinde ekranda meydana gelebilecek tek bir ölü piksel neticesinde bile panel değişimi gibi birçok imkan ve güvence, Monster’ın kullanıcılarına verdiği değeri gösteriyor. Yaşayabileceğiniz sorunlara karşı daima yanınızda olan ve bu sorunlara kısa sürede müdahale eden Monster teknik servisi oyun keyfinizi ve çalışmalarınızı dilediğiniz gibi sürdürebilmenize yardımcı oluyor.
+                
+                Yeni ve güçlü bir dizüstü bilgisayar almayı amaçlıyorsanız, Monster’ın kullanıcı dostu ve güvenli web sitesi üzerinden dilediğiniz modeli inceleyip hemen sepetinize ekleyebilirsiniz.
+                
+                Aynı zamanda; İstanbul, Ankara, İzmir ve Lefkoşa’daki Monster mağazalarını da ziyaret edebilir, hem Monster’ın kendine özgü dünyasını keşfedebilir hem de gereksinimlerinize uygun bir notebook edinebilirsiniz.</p>
+          </div>
+          <img class="col-6 offset-md-1 d-none d-sm-inline-block " style="min-width: 300px; min-height: 300px; max-width: 400px" src="https://cdn-icons-png.flaticon.com/512/1001/1001266.png" alt="">
+        </div>
+      </section>
 
 
 	<!---FOOTER-->
