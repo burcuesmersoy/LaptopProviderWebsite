@@ -1,3 +1,8 @@
+<?php
+session_start();
+if (!($_SESSION['email'] == 'admin@gmail.com'))
+    header("Location: index.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 

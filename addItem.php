@@ -48,7 +48,8 @@ switch ($itemName) {
 $sql = "INSERT INTO $itemName (`component_name`, `price`, `stock`, `manufacturerID`, $attr) VALUES ('$ComponentName', '$price', '$stock', '$mid', '$attribute')";
 
 if ($conn->query($sql) === TRUE) {
-    echo 'Inserted';
+    header("Location: admin.php");
+    exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
