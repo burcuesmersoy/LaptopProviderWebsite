@@ -26,6 +26,7 @@ if($row['email'] == $email && $row['password'] == $password) {
     echo "Welcome ".$email." you are succesfully logged in.";
     session_start();
     $_SESSION['email'] = $row['email'];
+    $_SESSION['userID'] = $row['userID'];
     echo "<script>location.replace('loggedIndex.php')</script>";
 }
 else{
