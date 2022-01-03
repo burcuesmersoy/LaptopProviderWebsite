@@ -34,8 +34,8 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav ms-auto">
-                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                            <a class="nav-link" href="shop.html">Shop</a>
+                            <a class="nav-link" aria-current="page" href="index.php">Home</a>
+                            <a class="nav-link" href="shop.php">Shop</a>
                             <a class="nav-link" href="#">About Us</a>
                             <div class="dropdown">
                                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
