@@ -30,6 +30,7 @@ body{
     border-width: 0;
     box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
     box-sizing: border-box;
+     /**/
     color: #36395A;
     cursor: pointer;
     display: inline-flex;
@@ -66,3 +67,19 @@ body{
     box-shadow: #D6D6E7 0 3px 7px inset;
     transform: translateY(2px);
   }
+
+  /*navbar eşitlemece*/
+  .cosmetic{
+    background: #00000047 !important;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+
+
+  

@@ -10,16 +10,16 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <script>
     $(document).ready(function() {
-      $("#operation").change(function() {
-        var data = $("#form1").serialize();
+      $("#button1").click(function() {
+          var data = $("#form1").serialize();
 
-        if (data === 'operation=add') {
-          $("#div1").load("add.html");
-        } else if (data === 'operation=update') {
-          $("#div1").load("update.html");
-        } else if (data === 'operation=delete') {
-          $("#div1").load("delete.html");
-        }
+          if (data === 'operation=add') {
+              $("#div1").load("add.html");
+          } else if (data === 'operation=update') {
+              $("#div1").load("update.html");
+          } else if (data === 'operation=delete') {
+              $("#div1").load("delete.html");
+          }
       });
     });
   </script>
@@ -396,13 +396,13 @@
   <div class="container">
     <div class="row">
       <form id="form1" method="post">
-        <h3 class="text-center mt-3">ADD-UPDATE-DELETE</h3>
         <select class="form-select mb-4" aria-label="select" name="operation" id="operation">
           <option selected>Select the operation</option>
           <option value="add" name="add">ADD</option>
           <option value="update" name="update">UPDATE</option>
           <option value="delete" name="delete">DELETE</option>
         </select>
+        <button class="btn btn-lg btn-outline-black" type="button" id="button1">Select</button>
       </form>
 
     </div>
