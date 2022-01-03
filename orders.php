@@ -17,6 +17,20 @@ if (!($_SESSION['email'] == 'admin@gmail.com'))
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.php">Sigma</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" href="admin.php">Admin</a>
+                    <a class="nav-link active" aria-current="page" href="orders.php">Orders</a>
+                </div>
+            </div>
+        </div>
+    </nav>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -24,14 +38,10 @@ if (!($_SESSION['email'] == 'admin@gmail.com'))
                 <th scope="col">Insurance Period</th>
                 <th scope="col">Date</th>
                 <th scope="col">LaptopID</th>
-                <th scope="col">UserID</th>
-                <th scope="col">CPU Price</th>
-                <th scope="col">GPU Price</th>
-                <th scope="col">RAM Price</th>
-                <th scope="col">Storage Price</th>
-                <th scope="col">Display Price</th>
-                <th scope="col">OS Price</th>
-                <th scope="col">Total Price</th>
+                <th scope="col">User Details</th>
+                <th scope="col">Component</th>
+                <th scope="col">Price</th>
+
 
             </tr>
         </thead>
@@ -58,20 +68,52 @@ if (!($_SESSION['email'] == 'admin@gmail.com'))
                 $display = $row['display_price'];
                 $os = $row['os_price'];
                 $total = $row['total_price'];
+
+                $sql1 = "select cpu.component_name as cpuName,
+            gpu.component_name as gpuName,
+            display.component_name as displayName,
+            os.component_name as osName,
+            ram.component_name as ramName,
+            storage.component_name as storageName,
+            laptop.laptop_img1 as laptopImg,
+            laptop.name as laptopName,
+            laptop.laptopID as laptopID
+                from laptop 
+                        inner join cpu on cpu.cpuID= laptop.cpuID
+                        inner join gpu on gpu.gpuID=laptop.gpuID
+                        inner join display on display.displayID=laptop.displayID
+                        inner join os on os.osID=laptop.osID
+                        inner join ram on ram.ramID=laptop.ramID
+                        inner join storage on storage.storageID=laptop.storageID
+                where laptopID=$laptopID;";
+                $sqlqu = mysqli_query($conn, $sql1);
+                $names = mysqli_fetch_assoc($sqlqu);
+
+                $getName = "SELECT name, surname, email, street_address FROM `user` WHERE `userID`=$userID;";
+                $sqlName = mysqli_query($conn, $getName);
+                $userDetails = mysqli_fetch_assoc($sqlName);
+
+
+
                 echo '
               <tr>
-              <td>' . $orderID . '</td>
-              <td>' . $insurance . '</td>
-              <td>' . $date . '</td>
-              <td>' . $laptopID . '</td>
-              <td>' . $userID . '</td>
-              <td>' . $cpu . '</td>
-              <td>' . $gpu . '</td>
-              <td>' . $ram . '</td> 
-              <td>' . $storage . '</td>
-              <td>' . $display . '</td>
-              <td>' . $os . '</td>
-              <td>' . $total . '</td>
+              <td rowspan="8">' . $orderID . '</td>
+              <td rowspan="8">' . $insurance . '</td>
+              <td rowspan="8">' . $date . '</td>
+              <td rowspan="8">' . $laptopID . '</td>
+              
+              
+
+              
+              <tr><td>UserID: '. $userID . '</td><td>CPU: ' . $names['cpuName'] . '</td><td>' . $cpu . 'TL</td></tr>
+              <tr><td>Name: '. $userDetails['name'] . '</td><td>GPU: ' . $names['gpuName'] . '</td><td>' . $gpu . 'TL</td></tr>
+              <tr><td>Surname: '. $userDetails['surname'] . '</td><td>RAM: ' . $names['ramName'] . '</td><td>' . $ram . 'TL</td></tr>
+              <tr><td>'. $userDetails['email'] . '</td><td>Storage: ' . $names['storageName'] . '</td><td>' . $storage . 'TL</td></tr>
+              <tr><td rowspan="3">'. $userDetails['street_address'] . '</td><td>Display: ' . $names['displayName'] . '</td><td>' . $display . 'TL</td></tr>
+              <tr><td>OS:  ' . $names['osName'] . '</td><td>' . $os . 'TL</td></tr>
+              
+
+              <tr><td colspan="2" style="text-align: center;">Total: ' . $total . ' TL</td></tr>
             </tr>
               ';
             }

@@ -25,7 +25,7 @@ if($row['email'] == $email && $row['password'] == $password) {
     echo "Welcome ".$email." you are succesfully logged in.";
     session_start();
     $_SESSION['email'] = $row['email'];
-    echo "<script>location.replace('homepage.php')</script>";
+    echo "<script>location.replace('loggedIndex.php')</script>";
 }
 else{
     echo "<script>alert('Check your credentials')</script>";

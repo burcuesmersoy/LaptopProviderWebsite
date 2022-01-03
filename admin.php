@@ -1,3 +1,8 @@
+<?php
+session_start();
+if (!($_SESSION['email'] == 'admin@gmail.com'))
+  header("Location: index.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,10 +39,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="#">Features</a>
-          <a class="nav-link" href="#">Pricing</a>
-          <a class="nav-link disabled">Disabled</a>
+          <a class="nav-link active" href="admin.php">Admin</a>
+          <a class="nav-link active" aria-current="page" href="orders.php">Orders</a>
         </div>
       </div>
     </div>
@@ -48,9 +51,7 @@
     <div class="row">
       <div class="col">
 
-        <p class="text-center">
-          CPUs
-        </p>
+        <h3 class="text-center">CPUs</h3>
 
 
         <table class="table table-striped">
@@ -103,9 +104,8 @@
         </table>
       </div>
       <div class="col">
-        <p class="text-center">
-          Displays
-        </p>
+        <h3 class="text-center">Displays</h3>
+
 
         <table class="table table-striped">
           <thead>
@@ -151,9 +151,8 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <p class="text-center">
-          GPUs
-        </p>
+        <h3 class="text-center">GPUs</h3>
+
         <table class="table table-striped">
           <thead>
             <tr>
@@ -193,9 +192,8 @@
         </table>
       </div>
       <div class="col">
-        <p class="text-center">
-          OS
-        </p>
+        <h3 class="text-center">OS</h3>
+
         <table class="table table-striped">
           <thead>
             <tr>
@@ -240,9 +238,8 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <p class="text-center">
-          RAMs
-        </p>
+        <h3 class="text-center">RAMs</h3>
+
         <table class="table table-striped">
           <thead>
             <tr>
@@ -293,9 +290,8 @@
         </table>
       </div>
       <div class="col">
-        <p class="text-center">
-          Storages
-        </p>
+        <h3 class="text-center">Storages</h3>
+
         <table class="table table-striped">
           <thead>
             <tr>
@@ -340,9 +336,8 @@
   </div>
   <div class="container">
     <div class="row">
-      <p class="text-center">
-        Laptops
-      </p>
+      <h3 class="text-center">Laptops</h3>
+
       <table class="table table-striped">
         <thead>
           <tr>

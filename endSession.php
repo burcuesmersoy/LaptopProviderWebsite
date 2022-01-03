@@ -1,5 +1,5 @@
 <?php
 session_start();
-$_SESSION['EMailAddress'] = NULL;
+$_SESSION['email'] = NULL;
 
 echo "<script>location.replace('index.php')</script>";
