@@ -7,6 +7,7 @@ if ($conn->connect_error) {
 }
 
 $getId = $_GET["id"];
+$_SESSION['laptopID'] = $getId; 
 
 $result = $conn->query("
    select
@@ -108,7 +109,7 @@ $echo = $result->fetch_array();
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
         <div class="container">
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" href="loggedindex.php">
         <img src="https://cdn-icons-png.flaticon.com/512/1001/1001266.png" style="width: 40px;" alt="">Sigma Inc</a>
             <br>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -180,13 +181,14 @@ $echo = $result->fetch_array();
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
+                <form action="placeOrder.php" method="post">
                 <div>
                     <div class="row">
                         <div class="col-md-3 ">
                             <h1 style="color:white;">Storage:</h1>
                         </div>
                         <div class="col-md-9">
-                            <select class="form-select" aria-label="Default select example" id="storage">
+                            <select class="form-select" aria-label="Default select example" id="storage" name="storage">
                                 <?php
                                 $sql = "SELECT * FROM storage";
                                 $result = mysqli_query($conn, $sql);
@@ -206,7 +208,7 @@ $echo = $result->fetch_array();
                             <h1 style="color:white;" >RAM:</h1>
                         </div>
                         <div class="col-md-9">
-                            <select class="form-select" aria-label="Default select example" id="ram">
+                            <select class="form-select" aria-label="Default select example" id="ram" name="ram">
 
                                 <?php
                                 $sql = "SELECT * FROM ram";
@@ -226,7 +228,7 @@ $echo = $result->fetch_array();
                             <h1 style="color:white;">GPU:</h1>
                         </div>
                         <div class="col-md-9">
-                            <select class="form-select" aria-label="Default select example" id="gpu">
+                            <select class="form-select" aria-label="Default select example" id="gpu" name="gpu">
                                 <?php
                                 $sql = "SELECT * FROM gpu";
                                 $result = mysqli_query($conn, $sql);
@@ -245,7 +247,7 @@ $echo = $result->fetch_array();
                             <h1 style="color:white;">CPU:</h1>
                         </div>
                         <div class="col-md-9">
-                            <select class="form-select" aria-label="Default select example" id="cpu">
+                            <select class="form-select" aria-label="Default select example" id="cpu" name="cpu">
 
                                 <?php
                                 $sql = "SELECT * FROM cpu";
@@ -266,7 +268,7 @@ $echo = $result->fetch_array();
                             <h1 style="color:white;">Display:</h1>
                         </div>
                         <div class="col-md-9">
-                            <select class="form-select" aria-label="Default select example" id="display">
+                            <select class="form-select" aria-label="Default select example" id="display" name="display">
                                 <?php
                                 $sql = "SELECT * FROM display";
                                 $result = mysqli_query($conn, $sql);
@@ -286,7 +288,7 @@ $echo = $result->fetch_array();
                             <h1 style="color:white;">Operating System:</h1>
                         </div>
                         <div class="col-md-9">
-                            <select class="form-select" aria-label="Default select example" id="os">
+                            <select class="form-select" aria-label="Default select example" id="os" name="os">
                                 <?php
                                 $sql = "SELECT * FROM os";
                                 $result = mysqli_query($conn, $sql);
@@ -312,9 +314,8 @@ $echo = $result->fetch_array();
 
                         </div>
                     </div>
-
-
                 </div>
+                </form>
             </div>
             <!---açıklamanın gelecei kısım-->
             <div class="col-md-6">

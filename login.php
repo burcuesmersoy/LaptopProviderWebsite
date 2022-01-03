@@ -1,3 +1,8 @@
+<?php
+session_start();
+if (isset($_SESSION['email']))
+    header("Location: loggedindex.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
