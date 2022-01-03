@@ -104,40 +104,39 @@ $echo = $result->fetch_array();
     </script>
 </head>
 <body>
-
 <section>
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
-		<div class="container">
-			<a class="navbar-brand" href="">
-				<img src="https://cdn-icons-png.flaticon.com/512/1001/1001266.png" style="width: 40px;" alt="">Sigma Inc</a>
-			
-
-			<br>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav ms-auto">
-					<a class="nav-link" aria-current="page" href="loggedindex.php">Home</a>
-					<a class="nav-link" href="shop.php">Shop</a>
-					<a class="nav-link" href="#AboutUs">About Us</a>
-					<a href="admin.php" class="btn">
-						<svg xmlns="http://www.w3.org/2000/svg" color="#646771" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
-							<path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
-							<path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z" />
-						</svg>
-					</a>
+        <div class="container">
+        <a class="navbar-brand" href="">
+        <img src="https://cdn-icons-png.flaticon.com/512/1001/1001266.png" style="width: 40px;" alt="">Sigma Inc</a>
+            <br>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" aria-current="page" href="index.php">Home</a>
+                    <a class="nav-link" href="shop.php">Shop</a>
+                    <a href="admin.php" class="btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" color="#646771" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
+                            <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+                            <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z" />
+                        </svg>
+                    </a>
                     <a href="endSession.php" class="btn">
-						<svg xmlns="http://www.w3.org/2000/svg" color="#646771" width="16" height="16" fill="currentColor" class="bi bi-door-closed" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" color="#646771" width="16" height="16" fill="currentColor" class="bi bi-door-closed" viewBox="0 0 16 16">
                             <path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z"/>
                             <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"/>
                           </svg>
-					</a>
-				</div>
-			</div>
-		</div>
-	</nav>
+                    </a>
+                    
+
+                </div>
+            </div>
+        </div>
+    </nav>
 
 
 </section>
@@ -184,7 +183,7 @@ $echo = $result->fetch_array();
                 <div>
                     <div class="row">
                         <div class="col-md-3 ">
-                            <h1>Storage:</h1>
+                            <h1 style="color:white;">Storage:</h1>
                         </div>
                         <div class="col-md-9">
                             <select class="form-select" aria-label="Default select example" id="storage">
@@ -204,7 +203,7 @@ $echo = $result->fetch_array();
 
                     <div class="row">
                         <div class="col-md-3">
-                            <h1>RAM:</h1>
+                            <h1 style="color:white;" >RAM:</h1>
                         </div>
                         <div class="col-md-9">
                             <select class="form-select" aria-label="Default select example" id="ram">
@@ -224,11 +223,10 @@ $echo = $result->fetch_array();
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                            <h1>GPU:</h1>
+                            <h1 style="color:white;">GPU:</h1>
                         </div>
                         <div class="col-md-9">
                             <select class="form-select" aria-label="Default select example" id="gpu">
-                                <option selected>Open this select menu</option>
                                 <?php
                                 $sql = "SELECT * FROM gpu";
                                 $result = mysqli_query($conn, $sql);
@@ -244,7 +242,7 @@ $echo = $result->fetch_array();
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                            <h1>CPU:</h1>
+                            <h1 style="color:white;">CPU:</h1>
                         </div>
                         <div class="col-md-9">
                             <select class="form-select" aria-label="Default select example" id="cpu">
@@ -265,11 +263,10 @@ $echo = $result->fetch_array();
 
                     <div class="row">
                         <div class="col-md-3">
-                            <h1>Display:</h1>
+                            <h1 style="color:white;">Display:</h1>
                         </div>
                         <div class="col-md-9">
                             <select class="form-select" aria-label="Default select example" id="display">
-                                <option selected>Open this select menu</option>
                                 <?php
                                 $sql = "SELECT * FROM display";
                                 $result = mysqli_query($conn, $sql);
@@ -286,11 +283,10 @@ $echo = $result->fetch_array();
 
                     <div class="row">
                         <div class="col-md-3">
-                            <h1>Operating System:</h1>
+                            <h1 style="color:white;">Operating System:</h1>
                         </div>
                         <div class="col-md-9">
                             <select class="form-select" aria-label="Default select example" id="os">
-                                <option selected>Open this select menu</option>
                                 <?php
                                 $sql = "SELECT * FROM os";
                                 $result = mysqli_query($conn, $sql);
@@ -307,10 +303,13 @@ $echo = $result->fetch_array();
 
                     <div class="row">
                         <div class="col-md-3">
-                            <h1>Cost:</h1>
+                            <h1 style="color:white;">Cost:</h1>
                         </div>
                         <div class="col-md-9">
-                            <h1 id="price"></h1>
+                            
+                            <h1 style="color:#c2f140;font-size: 40px;"><span id="price"></span> TL</h1>
+                            <button class="button-41" role="button">Buy!</button>
+
                         </div>
                     </div>
 
@@ -327,7 +326,7 @@ $echo = $result->fetch_array();
                                 <table style="color:white;width:100%">
                                     <tr>
                                         <td>Laptop name:</td>
-                                        <td><?= $echo["laptopName"] ?></td>
+                                        <td style="font-size: 30px;"><?= $echo["laptopName"] ?></td>
                                     </tr>
                                     <tr>
                                         <td>RAM:</td>
@@ -354,12 +353,12 @@ $echo = $result->fetch_array();
 
                                     <tr>
                                         <td>Storage:</td>
-                                        <td><?= $echo["storageName"] ?></td>
+                                        <td ><?= $echo["storageName"] ?></td>
                                     </tr>
 
                                     <tr>
                                         <td>Cost:</td>
-                                        <td id="price">veri cekilecek</td>
+                                        <td style="color:#c2f140;font-size: 30px;"><span id="price" ></span> TL</td>
                                     </tr>
                                 </table>
 
@@ -460,8 +459,6 @@ $echo = $result->fetch_array();
     </div>
 </div>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
+
 </body>
 </html>
