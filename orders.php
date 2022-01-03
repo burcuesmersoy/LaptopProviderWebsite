@@ -53,7 +53,7 @@ if (!($_SESSION['email'] == 'admin@gmail.com'))
                 die("connection failed: " . $conn->connect_error);
             }
 
-            $getOrders = "SELECT * FROM `invoice` ORDER BY `orderID`";
+            $getOrders = "SELECT * FROM `invoice` ORDER BY `orderID` DESC";
             $result = mysqli_query($conn, $getOrders);
             while ($row = mysqli_fetch_assoc($result)) {
                 $orderID = $row['orderID'];

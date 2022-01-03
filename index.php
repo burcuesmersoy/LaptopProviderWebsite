@@ -102,7 +102,6 @@ if ($conn->connect_error) {
 					16GB (2×8) 3200MHz DDR4
 					500GB NVMe M.2 SSD
 				</p>
-				<button type="button" class="btn btn-light">Go Buy!</button>
 			</div>
 		</div>
 	</div>
