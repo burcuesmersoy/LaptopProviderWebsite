@@ -190,7 +190,7 @@ $echo = $result->fetch_array();
                 <div>
                     <div class="row">
                         <div class="col-md-3 ">
-                            <h1>Storage:</h1>
+                            <h1 style="color:white;">Storage:</h1>
                         </div>
                         <div class="col-md-9">
                             <select class="form-select" aria-label="Default select example" id="storage">
@@ -210,7 +210,7 @@ $echo = $result->fetch_array();
 
                     <div class="row">
                         <div class="col-md-3">
-                            <h1>RAM:</h1>
+                            <h1 style="color:white;" >RAM:</h1>
                         </div>
                         <div class="col-md-9">
                             <select class="form-select" aria-label="Default select example" id="ram">
@@ -230,11 +230,10 @@ $echo = $result->fetch_array();
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                            <h1>GPU:</h1>
+                            <h1 style="color:white;">GPU:</h1>
                         </div>
                         <div class="col-md-9">
                             <select class="form-select" aria-label="Default select example" id="gpu">
-                                <option selected>Open this select menu</option>
                                 <?php
                                 $sql = "SELECT * FROM gpu";
                                 $result = mysqli_query($conn, $sql);
@@ -250,7 +249,7 @@ $echo = $result->fetch_array();
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                            <h1>CPU:</h1>
+                            <h1 style="color:white;">CPU:</h1>
                         </div>
                         <div class="col-md-9">
                             <select class="form-select" aria-label="Default select example" id="cpu">
@@ -271,11 +270,10 @@ $echo = $result->fetch_array();
 
                     <div class="row">
                         <div class="col-md-3">
-                            <h1>Display:</h1>
+                            <h1 style="color:white;">Display:</h1>
                         </div>
                         <div class="col-md-9">
                             <select class="form-select" aria-label="Default select example" id="display">
-                                <option selected>Open this select menu</option>
                                 <?php
                                 $sql = "SELECT * FROM display";
                                 $result = mysqli_query($conn, $sql);
@@ -292,11 +290,10 @@ $echo = $result->fetch_array();
 
                     <div class="row">
                         <div class="col-md-3">
-                            <h1>Operating System:</h1>
+                            <h1 style="color:white;">Operating System:</h1>
                         </div>
                         <div class="col-md-9">
                             <select class="form-select" aria-label="Default select example" id="os">
-                                <option selected>Open this select menu</option>
                                 <?php
                                 $sql = "SELECT * FROM os";
                                 $result = mysqli_query($conn, $sql);
@@ -313,10 +310,13 @@ $echo = $result->fetch_array();
 
                     <div class="row">
                         <div class="col-md-3">
-                            <h1>Cost:</h1>
+                            <h1 style="color:white;">Cost:</h1>
                         </div>
                         <div class="col-md-9">
-                            <h1 id="price"></h1>
+                            
+                            <h1 style="color:#c2f140;font-size: 40px;"><span id="price"></span> TL</h1>
+                            <button class="button-41" role="button">Buy!</button>
+
                         </div>
                     </div>
 
@@ -333,7 +333,7 @@ $echo = $result->fetch_array();
                                 <table style="color:white;width:100%">
                                     <tr>
                                         <td>Laptop name:</td>
-                                        <td><?= $echo["laptopName"] ?></td>
+                                        <td style="font-size: 30px;"><?= $echo["laptopName"] ?></td>
                                     </tr>
                                     <tr>
                                         <td>RAM:</td>
@@ -360,12 +360,12 @@ $echo = $result->fetch_array();
 
                                     <tr>
                                         <td>Storage:</td>
-                                        <td><?= $echo["storageName"] ?></td>
+                                        <td ><?= $echo["storageName"] ?></td>
                                     </tr>
 
                                     <tr>
                                         <td>Cost:</td>
-                                        <td id="price">veri cekilecek</td>
+                                        <td style="color:#c2f140;font-size: 30px;"><span id="price" ></span> TL</td>
                                     </tr>
                                 </table>
 
