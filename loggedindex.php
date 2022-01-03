@@ -41,7 +41,7 @@ if ($conn->connect_error) {
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav ms-auto">
-					<a class="nav-link" aria-current="page" href="index.php">Home</a>
+					<a class="nav-link" aria-current="page" href="loggedindex.php">Home</a>
 					<a class="nav-link" href="shop.php">Shop</a>
 					<a class="nav-link" href="#AboutUs">About Us</a>
 					<div class="dropdown">
