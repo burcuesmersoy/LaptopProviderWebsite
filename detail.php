@@ -50,12 +50,61 @@ if ($conn->connect_error) {
     <title> Sigma Inc </title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
+    <script>
+        $(document).ready(function () {
+            var names = {};
+
+            function updateNames() {
+                names['storage'] = $('#storage option:selected').text();
+                names['ram'] = $('#ram option:selected').text();
+                names['gpu'] = $('#gpu option:selected').text();
+                names['cpu'] = $('#cpu option:selected').text();
+                names['display'] = $('#display option:selected').text();
+                names['os'] = $('#os option:selected').text();
+            }
+
+            function updatePrices() {
+                $.post("updatePrice.php", names, function (data) {
+                        $("#price").show().html(data);
+                    }
+                );
+            }
+
+            updateNames();
+            updatePrices();
+
+            $("#storage").change(function () {
+                updateNames();
+                updatePrices();
+            });
+            $("#ram").change(function () {
+                updateNames();
+                updatePrices();
+            });
+            $("#gpu").change(function () {
+                updateNames();
+                updatePrices();
+            });
+            $("#cpu").change(function () {
+                updateNames();
+                updatePrices();
+            });
+            $("#display").change(function () {
+                updateNames();
+                updatePrices();
+            });
+            $("#os").change(function () {
+                updateNames();
+                updatePrices();
+            });
+        });
+    </script>
 </head>
 <body>
     <section>
-       
+
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
          <div class="container">
             <a class="navbar-brand" href="index.php"> Sigma Inc </a>
@@ -83,15 +132,15 @@ if ($conn->connect_error) {
                             <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
                             <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z"/>
                           </svg>
-                          
+
                     </button>
-                      
+
                 </div>
             </div>
          </div>
       </nav>
 
-          
+
     </section>
 
     <section>
@@ -131,7 +180,7 @@ if ($conn->connect_error) {
                                <h1>Storage:</h1>
                             </div>
                             <div class="col-md-9">
-                               <select class="form-select" aria-label="Default select example">
+                               <select class="form-select" aria-label="Default select example" id="storage">
                                   <?php
                                     $sql = "SELECT * FROM storage";
                                     $result = mysqli_query($conn, $sql);
@@ -149,15 +198,15 @@ if ($conn->connect_error) {
                                <h1>RAM:</h1>
                             </div>
                             <div class="col-md-9">
-                               <select class="form-select" aria-label="Default select example">
-                                  
+                               <select class="form-select" aria-label="Default select example" id="ram">
+
                                   <?php
                                     $sql = "SELECT * FROM ram";
                                     $result = mysqli_query($conn, $sql);
 
                                           foreach( $result as $ram ) {
                                   ?>
-                                  <option value="<?=$ram["ramID"]?>"<?php if ( $echo["ramID"] == $ram["ramID"] ) { echo "selected"; } ?>><?=$ram["component_name"]?><?=$ram["component_name"]?></option>
+                                  <option value="<?=$ram["ramID"]?>"<?php if ( $echo["ramID"] == $ram["ramID"] ) { echo "selected"; } ?>><?=$ram["component_name"]?></option>
                                   <?php } ?>
                                </select>
                             </div>
@@ -167,7 +216,7 @@ if ($conn->connect_error) {
                                <h1>GPU:</h1>
                             </div>
                             <div class="col-md-9">
-                               <select class="form-select" aria-label="Default select example">
+                               <select class="form-select" aria-label="Default select example" id="gpu">
                                   <option selected>Open this select menu</option>
                                   <?php
                                     $sql = "SELECT * FROM gpu";
@@ -183,10 +232,10 @@ if ($conn->connect_error) {
                          <div class="row">
                             <div class="col-md-3">
                                <h1>CPU:</h1>
-                            </div> 
+                            </div>
                             <div class="col-md-9">
-                               <select class="form-select" aria-label="Default select example">
-                                  
+                               <select class="form-select" aria-label="Default select example" id="cpu">
+
                                   <?php
                                     $sql = "SELECT * FROM cpu";
                                     $result = mysqli_query($conn, $sql);
@@ -204,7 +253,7 @@ if ($conn->connect_error) {
                                <h1>Display:</h1>
                             </div>
                             <div class="col-md-9">
-                               <select class="form-select" aria-label="Default select example">
+                               <select class="form-select" aria-label="Default select example" id="display">
                                   <option selected>Open this select menu</option>
                                   <?php
                                     $sql = "SELECT * FROM display";
@@ -223,7 +272,7 @@ if ($conn->connect_error) {
                                <h1>Operating System:</h1>
                             </div>
                             <div class="col-md-9">
-                               <select class="form-select" aria-label="Default select example">
+                               <select class="form-select" aria-label="Default select example" id="os">
                                   <option selected>Open this select menu</option>
                                   <?php
                                     $sql = "SELECT * FROM os";
@@ -237,7 +286,7 @@ if ($conn->connect_error) {
                             </div>
                          </div>
 
-                      
+
                     </div>
                 </div>
                 <!---açıklamanın gelecei kısım-->
@@ -282,12 +331,12 @@ if ($conn->connect_error) {
 
                                 <tr>
                                     <td>Cost:</td>
-                                    <td>veri cekilecek</td>
+                                    <td id="price">veri cekilecek</td>
                                 </tr>
                             </table>
 
                         </div>
-                           
+
                   </div>
 
                   <div >
@@ -300,18 +349,18 @@ if ($conn->connect_error) {
                   <div >
                      <br>
                      <h2>Video</h2>
-                     <p><iframe width="460" height="315" src="https://www.youtube.com/embed/jDLCz8kVko8" 
-                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                     <p><iframe width="460" height="315" src="https://www.youtube.com/embed/jDLCz8kVko8"
+                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
                         clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
                   </div>
 
                </div>
-               
+
                </div>
 
 
 
-               
+
 
 
                 </div>
@@ -322,7 +371,7 @@ if ($conn->connect_error) {
                         <br>
                         <br>
                         <br>
-      <!---FOOTER--> 
+      <!---FOOTER-->
       <div class="card container-fluid" style="background-color: #6c6c6c;border: 1px solid rgb(255 255 255 / 13%);">
         <div class="row mb-4 ">
             <div class="col-md-4 col-sm-11 col-xs-11">
