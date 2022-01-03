@@ -124,7 +124,8 @@ if (!isset($_SESSION['email']))
                         inner join display on display.displayID=laptop.displayID
                         inner join os on os.osID=laptop.osID
                         inner join ram on ram.ramID=laptop.ramID
-                        inner join storage on storage.storageID=laptop.storageID;";
+                        inner join storage on storage.storageID=laptop.storageID
+                where laptop.is_pre_made=1 order by laptop.laptopID;";
         $result = mysqli_query($conn, $sql);
 
         foreach ($result as $laptop) {
