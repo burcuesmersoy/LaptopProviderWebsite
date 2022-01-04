@@ -276,7 +276,7 @@ $echo = $result->fetch_array();
                                     ?>
                                     <option value="<?= $display["displayID"] ?>"<?php if ($echo["displayID"] == $display["displayID"]) {
                                         echo "selected";
-                                    } ?>><?= $display["component_name"] . ' - ' . $display["price"] . ' TL' ?></option>
+                                    } ?>><?= $display["component_name"] . ' / ' . $display["refresh_rate"] . 'Hz - ' . $display["price"] . ' TL' ?></option>
                                 <?php } ?>
                             </select>
                         </div>
