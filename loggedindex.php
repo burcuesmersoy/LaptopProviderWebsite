@@ -114,7 +114,7 @@ if ($conn->connect_error) {
 			<?php
 			$firstActive = "active";
 			$ece = 1;
-			$sql = "SELECT * FROM laptop";
+			$sql = "SELECT * FROM laptop WHERE is_pre_made = 1";
 			$result = mysqli_query($conn, $sql);
 
 			foreach ($result as $laptop) {
