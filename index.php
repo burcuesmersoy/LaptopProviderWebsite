@@ -114,12 +114,12 @@ if ($conn->connect_error) {
 		<div class="carousel-inner">
 			<?php
 			$firstActive = "active";
-			$ece = 1;
+			$i = 1;
 			$sql = "SELECT * FROM laptop WHERE is_pre_made = 1";
 			$result = mysqli_query($conn, $sql);
 
 			foreach ($result as $laptop) {
-				if ($ece == 1) echo "<div class=\"row $firstActive carousel-item\">";
+				if ($i == 1) echo "<div class=\"row $firstActive carousel-item\">";
 			?>
 				<div class="col col-4" style="float:left">
 					<img src="assets/laptop_images/<?= $laptop["laptop_img1"] ?>" class="card-img-top" alt="...">
@@ -129,13 +129,13 @@ if ($conn->connect_error) {
 					</div>
 				</div>
 			<?php
-				if ($ece == 3) {
+				if ($i == 3) {
 					$firstActive = "";
 					echo "</div>";
-					$ece = 0;
+					$i = 0;
 				}
 
-				$ece++;
+				$i++;
 			}
 			?>
 		</div>
