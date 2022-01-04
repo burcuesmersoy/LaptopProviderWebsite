@@ -55,6 +55,18 @@ if (mysqli_num_rows($result) == 0) {
     mysqli_query($conn, $insertLaptop);
     $result2 = mysqli_query($conn, $sql);
     $ids = mysqli_fetch_assoc($result2);
+    $gpuID = $ids['gpuID'];
+    $cpuID = $ids['cpuID'];
+    $ramID = $ids['ramID'];
+    $storageID = $ids['storageID'];
+    $osID = $ids['osID'];
+    $displayID = $ids['displayID'];
+    mysqli_query($conn, "UPDATE storage SET stock = stock - 1 WHERE storageID = '$storageID'");
+    mysqli_query($conn, "UPDATE gpu SET stock = stock - 1 WHERE gpuID = '$gpuID'");
+    mysqli_query($conn, "UPDATE cpu SET stock = stock - 1 WHERE cpuID = '$cpuID'");
+    mysqli_query($conn, "UPDATE ram SET stock = stock - 1 WHERE ramID = '$ramID'");
+    mysqli_query($conn, "UPDATE display SET stock = stock - 1 WHERE displayID = '$displayID'");
+    mysqli_query($conn, "UPDATE os SET stock = stock - 1 WHERE osID = '$osID'");
 }
 $gpuID = $ids['gpuID'];
 $cpuID = $ids['cpuID'];
