@@ -101,7 +101,6 @@ if ($conn->connect_error) {
 					16GB (2×8) 3200MHz DDR4
 					500GB NVMe M.2 SSD
 				</p>
-				<button type="button" class="btn btn-light">Go Buy!</button>
 			</div>
 		</div>
 	</div>
@@ -151,7 +150,7 @@ if ($conn->connect_error) {
 	<section class="text-left p-5" id="AboutUs">
         <div class="container d-md-flex align-items-center">
           <div>
-              <h3 style="color:#957bda;">About Us</h1>
+              <h3 style="color:#957bda;">About Us</h3>
             <p class="my-3" style="color:#646771;">
                 Oynadığınız oyunlarla bütünleşmek istiyorsanız ve kullandığınız yazılımlarla yaratıcılığınızın doruklarına çıkmayı hedefliyorsanız, Monster Notebook size beklentilerinizin de ötesinde bir dünya sunuyor.
 
