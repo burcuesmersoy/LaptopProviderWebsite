@@ -56,49 +56,49 @@ $echo = $result->fetch_array();
 
     <script>
         $(document).ready(function () {
-            var names = {};
+            var id = {};
 
-            function updateNames() {
-                names['storage'] = $('#storage option:selected').text();
-                names['ram'] = $('#ram option:selected').text();
-                names['gpu'] = $('#gpu option:selected').text();
-                names['cpu'] = $('#cpu option:selected').text();
-                names['display'] = $('#display option:selected').text();
-                names['os'] = $('#os option:selected').text();
+            function updateIDs() {
+                id['storage'] = $('#storage option:selected').val();
+                id['ram'] = $('#ram option:selected').val();
+                id['gpu'] = $('#gpu option:selected').val();
+                id['cpu'] = $('#cpu option:selected').val();
+                id['display'] = $('#display option:selected').val();
+                id['os'] = $('#os option:selected').val();
             }
 
             function updatePrices() {
-                $.post("updatePrice.php", names, function (data) {
+                $.post("updatePrice.php", id, function (data) {
                         $("[id=price]").show().html(data);
                     }
                 );
             }
 
-            updateNames();
+            updateIDs();
             updatePrices();
 
             $("#storage").change(function () {
-                updateNames();
+                updateIDs();
                 updatePrices();
             });
             $("#ram").change(function () {
-                updateNames();
+                updateIDs();
                 updatePrices();
             });
             $("#gpu").change(function () {
-                updateNames();
+                updateIDs();
                 updatePrices();
             });
             $("#cpu").change(function () {
-                updateNames();
+                updateIDs();
                 updatePrices();
             });
             $("#display").change(function () {
-                updateNames();
+                updateIDs();
                 updatePrices();
             });
             $("#os").change(function () {
-                updateNames();
+                updateIDs();
                 updatePrices();
             });
         });
@@ -189,14 +189,14 @@ $echo = $result->fetch_array();
                         <div class="col-md-9">
                             <select class="form-select" aria-label="Default select example" id="storage" name="storage">
                                 <?php
-                                $sql = "SELECT * FROM storage";
+                                $sql = "SELECT * FROM storage ORDER BY price";
                                 $result = mysqli_query($conn, $sql);
 
                                 foreach ($result as $storage) {
                                     ?>
                                     <option value="<?= $storage["storageID"] ?>"<?php if ($echo["storageID"] == $storage["storageID"]) {
                                         echo "selected";
-                                    } ?>><?= $storage["component_name"] ?></option>
+                                    } ?>><?= $storage["component_name"] . ' - ' . $storage["price"] . ' TL' ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -210,14 +210,14 @@ $echo = $result->fetch_array();
                             <select class="form-select" aria-label="Default select example" id="ram" name="ram">
 
                                 <?php
-                                $sql = "SELECT * FROM ram";
+                                $sql = "SELECT * FROM ram ORDER BY price";
                                 $result = mysqli_query($conn, $sql);
 
                                 foreach ($result as $ram) {
                                     ?>
                                     <option value="<?= $ram["ramID"] ?>"<?php if ($echo["ramID"] == $ram["ramID"]) {
                                         echo "selected";
-                                    } ?>><?= $ram["component_name"] ?></option>
+                                    } ?>><?= $ram["component_name"] . ' - ' . $ram["price"] . ' TL' ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -229,14 +229,14 @@ $echo = $result->fetch_array();
                         <div class="col-md-9">
                             <select class="form-select" aria-label="Default select example" id="gpu" name="gpu">
                                 <?php
-                                $sql = "SELECT * FROM gpu";
+                                $sql = "SELECT * FROM gpu ORDER BY price";
                                 $result = mysqli_query($conn, $sql);
 
                                 foreach ($result as $gpu) {
                                     ?>
                                     <option value="<?= $gpu["gpuID"] ?>" <?php if ($echo["gpuID"] == $gpu["gpuID"]) {
                                         echo "selected";
-                                    } ?> ><?= $gpu["component_name"] ?></option>
+                                    } ?> ><?= $gpu["component_name"] . ' - ' . $gpu["price"] . ' TL' ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -249,14 +249,14 @@ $echo = $result->fetch_array();
                             <select class="form-select" aria-label="Default select example" id="cpu" name="cpu">
 
                                 <?php
-                                $sql = "SELECT * FROM cpu";
+                                $sql = "SELECT * FROM cpu ORDER BY price";
                                 $result = mysqli_query($conn, $sql);
 
                                 foreach ($result as $cpu) {
                                     ?>
                                     <option value="<?= $cpu["cpuID"] ?>" <?php if ($echo["cpuID"] == $cpu["cpuID"]) {
                                         echo "selected";
-                                    } ?> ><?= $cpu["component_name"] ?></option>
+                                    } ?> ><?= $cpu["component_name"] . ' - ' . $cpu["price"] . ' TL' ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -269,14 +269,14 @@ $echo = $result->fetch_array();
                         <div class="col-md-9">
                             <select class="form-select" aria-label="Default select example" id="display" name="display">
                                 <?php
-                                $sql = "SELECT * FROM display";
+                                $sql = "SELECT * FROM display ORDER BY price";
                                 $result = mysqli_query($conn, $sql);
 
                                 foreach ($result as $display) {
                                     ?>
                                     <option value="<?= $display["displayID"] ?>"<?php if ($echo["displayID"] == $display["displayID"]) {
                                         echo "selected";
-                                    } ?>><?= $display["component_name"] ?></option>
+                                    } ?>><?= $display["component_name"] . ' / ' . $display["refresh_rate"] . 'Hz - ' . $display["price"] . ' TL' ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -289,14 +289,14 @@ $echo = $result->fetch_array();
                         <div class="col-md-9">
                             <select class="form-select" aria-label="Default select example" id="os" name="os">
                                 <?php
-                                $sql = "SELECT * FROM os";
+                                $sql = "SELECT * FROM os ORDER BY price";
                                 $result = mysqli_query($conn, $sql);
 
                                 foreach ($result as $os) {
                                     ?>
                                     <option value="<?= $os["osID"] ?>" <?php if ($echo["osID"] == $os["osID"]) {
                                         echo "selected";
-                                    } ?>><?= $os["component_name"] ?></option>
+                                    } ?>><?= $os["component_name"] . ' - ' . $os["price"] . ' TL' ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -369,8 +369,8 @@ $echo = $result->fetch_array();
                         <div>
                             <br>
                             <h2>Information</h2>
-                            <p>It is delivered to XXX(firmaadi) cargo within 3 working days at the latest.
-                                If the operating system is not purchased, the installation is not performed.
+                            <p>It is delivered to cargo within 3 working days at the latest.
+                                If a operating system is purchased, its installation is performed by us.
                                 Sigma Inc. notebook models are sent after being assembled and tested.</p>
                         </div>
                         <div>
@@ -397,7 +397,7 @@ $echo = $result->fetch_array();
 <br>
 <br>
 <!---FOOTER-->
-<div class="card container-fluid" style="background-color: #6c6c6c;border: 1px solid rgb(255 255 255 / 13%);">
+<div class="card container-fluid" style="background-color: #222222;border: 1px solid rgb(255 255 255 / 13%);">
     <div class="row mb-4 ">
         <div class="col-md-4 col-sm-11 col-xs-11">
             <div class="footer-text pull-left">
@@ -405,7 +405,7 @@ $echo = $result->fetch_array();
                     <h1 class="font-weight-bold mr-2 px-3" style="color:#16151a; background-color:#957bda"> Sigma </h1>
                     <h1 style="color: #957bda">Inc</h1>
                 </div>
-                <p class="card-text" style="color: #494949;">Σ Sigma Inc. is a laptop company. There are laptops that
+                <p class="card-text" style="color: gray;">Σ Sigma Inc. is a laptop company. There are laptops that
                     have different components to appeal to different audiences. Also, laptops are customizable by the
                     customer with a price change.</p>
                 <div class="social mt-2 mb-3"><i class="fa fa-facebook-official fa-lg"></i> <i
@@ -414,7 +414,7 @@ $echo = $result->fetch_array();
             </div>
         </div>
         <div class="col-md-2 col-sm-1 col-xs-1 mb-2"></div>
-        <div class="col-md-2 col-sm-4 col-xs-4 " style="color: #494949;">
+        <div class="col-md-2 col-sm-4 col-xs-4 " style="color: gray;">
             <h5 class="heading">Services</h5>
             <ul>
                 <li>IT Consulting</li>
@@ -423,7 +423,7 @@ $echo = $result->fetch_array();
                 <li>DevOps & Support</li>
             </ul>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-4" style="color: #494949;">
+        <div class="col-md-2 col-sm-4 col-xs-4" style="color: gray;">
             <h5 class="heading">Industries</h5>
             <ul class="card-text">
                 <li>Finance</li>
@@ -432,7 +432,7 @@ $echo = $result->fetch_array();
                 <li>Retail</li>
             </ul>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-4" style="color: #494949;">
+        <div class="col-md-2 col-sm-4 col-xs-4" style="color: gray;">
             <h5 class="heading">Company</h5>
             <ul class="card-text">
                 <li>About Us</li>
@@ -446,10 +446,10 @@ $echo = $result->fetch_array();
     <div class="row" style="font-size:10px;">
         <div class="col-md-6 col-sm-6 col-xs-6">
             <div class="pull-left">
-                <p><i class="fa fa-copyright" style="color: #494949;"></i> 2022 @copyright by sigma inc</p>
+                <p><i class="fa fa-copyright" style="color: gray;"></i> 2022 @copyright by sigma inc</p>
             </div>
         </div>
-        <div class="col-md-6 col-sm-6 col-xs-6" style="color: #494949;">
+        <div class="col-md-6 col-sm-6 col-xs-6" style="color: gray;">
             <div class="pull-right mr-4 d-flex policy">
                 <div>Terms of Use</div>
                 <div>Privacy Policy</div>

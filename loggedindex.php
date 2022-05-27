@@ -101,7 +101,6 @@ if ($conn->connect_error) {
 					16GB (2×8) 3200MHz DDR4
 					500GB NVMe M.2 SSD
 				</p>
-				<button type="button" class="btn btn-light">Go Buy!</button>
 			</div>
 		</div>
 	</div>
@@ -114,12 +113,12 @@ if ($conn->connect_error) {
 		<div class="carousel-inner">
 			<?php
 			$firstActive = "active";
-			$ece = 1;
-			$sql = "SELECT * FROM laptop";
+			$i = 1;
+			$sql = "SELECT * FROM laptop WHERE is_pre_made = 1";
 			$result = mysqli_query($conn, $sql);
 
 			foreach ($result as $laptop) {
-				if ($ece == 1) echo "<div class=\"row $firstActive carousel-item\">";
+				if ($i == 1) echo "<div class=\"row $firstActive carousel-item\">";
 			?>
 				<div class="col col-4" style="float:left">
 					<img src="assets/laptop_images/<?= $laptop["laptop_img1"] ?>" class="card-img-top" alt="...">
@@ -129,13 +128,13 @@ if ($conn->connect_error) {
 					</div>
 				</div>
 			<?php
-				if ($ece == 3) {
+				if ($i == 3) {
 					$firstActive = "";
 					echo "</div>";
-					$ece = 0;
+					$i = 0;
 				}
 
-				$ece++;
+				$i++;
 			}
 			?>
 		</div>
@@ -151,7 +150,7 @@ if ($conn->connect_error) {
 	<section class="text-left p-5" id="AboutUs">
         <div class="container d-md-flex align-items-center">
           <div>
-              <h3 style="color:#957bda;">About Us</h1>
+              <h3 style="color:#957bda;">About Us</h3>
             <p class="my-3" style="color:#646771;">
                 Oynadığınız oyunlarla bütünleşmek istiyorsanız ve kullandığınız yazılımlarla yaratıcılığınızın doruklarına çıkmayı hedefliyorsanız, Monster Notebook size beklentilerinizin de ötesinde bir dünya sunuyor.
 
